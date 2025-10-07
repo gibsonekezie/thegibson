@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gibson Ekezie - DevOps Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn-close"></span>
+                <span class="btn-minimize"></span>
+                <span class="btn-maximize"></span>
+            </div>
+            <div class="terminal-title">gibson@devops:~</div>
+        </div>
+        <div class="terminal-body">
+            <div id="terminal-output">
+                <div class="terminal-line">
+                    <span class="prompt">gibson@devops:~$</span> <span class="command">cat welcome.txt</span>
+                </div>
+                <div class="output">
+    ╔══════════════════════════════════════════════════════════════╗
+    ║                                                              ║
+    ║   Welcome to Gibson Ekezie's Terminal                       ║
+    ║   DevOps Engineer | Cloud Architect | Automation Expert     ║
+    ║                                                              ║
+    ╚══════════════════════════════════════════════════════════════╝
+                </div>
+                <div class="output">
+Type 'help' to see available commands.
+                </div>
+            </div>
+            <div class="terminal-input-line">
+                <span class="prompt">gibson@devops:~$</span>
+                <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
