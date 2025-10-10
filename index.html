@@ -1,44 +1,289 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gibson Ekezie - DevOps Engineer</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>John Doe - DevOps Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .skill-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
 </head>
-<body>
-    <div class="terminal">
-        <div class="terminal-header">
-            <div class="terminal-buttons">
-                <span class="btn-close"></span>
-                <span class="btn-minimize"></span>
-                <span class="btn-maximize"></span>
-            </div>
-            <div class="terminal-title">gibson@devops:~</div>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-cyan-400">JD</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <div class="terminal-body">
-            <div id="terminal-output">
-                <div class="terminal-line">
-                    <span class="prompt">gibson@devops:~$</span> <span class="command">cat welcome.txt</span>
-                </div>
-                <div class="output">
-    ╔══════════════════════════════════════════════════════════════╗
-    ║                                                              ║
-    ║   Welcome to Gibson Ekezie's Terminal                       ║
-    ║   DevOps Engineer | Cloud Architect | Automation Expert     ║
-    ║                                                              ║
-    ╚══════════════════════════════════════════════════════════════╝
-                </div>
-                <div class="output">
-Type 'help' to see available commands.
-                </div>
-            </div>
-            <div class="terminal-input-line">
-                <span class="prompt">gibson@devops:~$</span>
-                <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false">
-            </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-6 hover:bg-gray-800">About</a>
+            <a href="#skills" class="block py-2 px-6 hover:bg-gray-800">Skills</a>
+            <a href="#experience" class="block py-2 px-6 hover:bg-gray-800">Experience</a>
+            <a href="#projects" class="block py-2 px-6 hover:bg-gray-800">Projects</a>
+            <a href="#contact" class="block py-2 px-6 hover:bg-gray-800">Contact</a>
         </div>
-    </div>
-    <script src="script.js"></script>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+                    Hi, I'm John Doe
+                </h1>
+                <h2 class="text-2xl md:text-4xl text-cyan-400 mb-8">
+                    A DevOps & Cloud Engineer
+                </h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10">
+                    I specialize in building and maintaining scalable, reliable infrastructure. Passionate about automation, CI/CD, and cloud technologies.
+                </p>
+                <a href="#contact" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-colors">
+                    Get In Touch
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/3 text-center">
+                        <img src="https://placehold.co/400x400/1a202c/76e6d3?text=JD" alt="John Doe" class="rounded-full w-64 h-64 mx-auto border-4 border-cyan-400">
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-lg mb-4">
+                            Hello! I'm John, a DevOps engineer with a passion for bridging the gap between development and operations. With over 5 years of experience, I've had the opportunity to work on various projects, helping teams to streamline their deployment pipelines and improve system reliability.
+                        </p>
+                        <p class="text-lg mb-4">
+                            My goal is to automate everything, from infrastructure provisioning to application deployment, ensuring a fast and efficient development lifecycle. I am a strong advocate for Infrastructure as Code (IaC) and have extensive experience with tools like Terraform and Ansible.
+                        </p>
+                        <p class="text-lg">
+                            When I'm not containerizing applications or writing CI/CD pipelines, you can find me exploring the latest tech trends or contributing to open-source projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Technical Skills</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                    <!-- Skill Card Example -->
+                    <div class="skill-card bg-gray-800 p-6 rounded-lg text-center">
+                        <i class="fab fa-docker text-5xl text-cyan-400 mb-4"></i>
+                        <h3 class="font-semibold">Docker</h3>
+                    </div>
+                     <div class="skill-card bg-gray-800 p-6 rounded-lg text-center">
+                        <i class="fab fa-kubernetes text-5xl text-cyan-400 mb-4"></i>
+                        <h3 class="font-semibold">Kubernetes</h3>
+                    </div>
+                    <div class="skill-card bg-gray-800 p-6 rounded-lg text-center">
+                        <i class="fab fa-aws text-5xl text-cyan-400 mb-4"></i>
+                        <h3 class="font-semibold">AWS</h3>
+                    </div>
+                    <div class="skill-card bg-gray-800 p-6 rounded-lg text-center">
+                        <i class="fas fa-server text-5xl text-cyan-400 mb-4"></i>
+                        <h3 class="font-semibold">Terraform</h3>
+                    </div>
+                    <div class="skill-card bg-gray-800 p-6 rounded-lg text-center">
+                        <i class="fab fa-jenkins text-5xl text-cyan-400 mb-4"></i>
+                        <h3 class="font-semibold">Jenkins</h3>
+                    </div>
+                    <div class="skill-card bg-gray-800 p-6 rounded-lg text-center">
+                        <i class="fab fa-git-alt text-5xl text-cyan-400 mb-4"></i>
+                        <h3 class="font-semibold">Git</h3>
+                    </div>
+                    <div class="skill-card bg-gray-800 p-6 rounded-lg text-center">
+                        <i class="fas fa-terminal text-5xl text-cyan-400 mb-4"></i>
+                        <h3 class="font-semibold">Bash</h3>
+                    </div>
+                    <div class="skill-card bg-gray-800 p-6 rounded-lg text-center">
+                        <i class="fab fa-python text-5xl text-cyan-400 mb-4"></i>
+                        <h3 class="font-semibold">Python</h3>
+                    </div>
+                    <div class="skill-card bg-gray-800 p-6 rounded-lg text-center">
+                        <i class="fas fa-network-wired text-5xl text-cyan-400 mb-4"></i>
+                        <h3 class="font-semibold">Ansible</h3>
+                    </div>
+                     <div class="skill-card bg-gray-800 p-6 rounded-lg text-center">
+                        <i class="fas fa-chart-line text-5xl text-cyan-400 mb-4"></i>
+                        <h3 class="font-semibold">Prometheus</h3>
+                    </div>
+                     <div class="skill-card bg-gray-800 p-6 rounded-lg text-center">
+                        <i class="fas fa-cogs text-5xl text-cyan-400 mb-4"></i>
+                        <h3 class="font-semibold">Grafana</h3>
+                    </div>
+                    <div class="skill-card bg-gray-800 p-6 rounded-lg text-center">
+                        <i class="fab fa-linux text-5xl text-cyan-400 mb-4"></i>
+                        <h3 class="font-semibold">Linux</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Work Experience</h2>
+                <div class="relative border-l-2 border-cyan-500 ml-4 md:ml-0">
+                    <!-- Experience Item -->
+                    <div class="mb-10 ml-8">
+                        <div class="absolute -left-3.5 mt-1.5 h-6 w-6 rounded-full bg-cyan-500"></div>
+                        <h3 class="text-xl font-semibold text-cyan-400">Senior DevOps Engineer</h3>
+                        <p class="text-md font-medium">Tech Solutions Inc. | 2020 - Present</p>
+                        <p class="mt-2 text-gray-400">
+                           - Implemented and managed CI/CD pipelines for various microservices, reducing deployment time by 50%.
+                           <br>- Managed Kubernetes clusters on AWS using EKS, ensuring high availability and scalability.
+                           <br>- Automated infrastructure provisioning using Terraform and configuration management with Ansible.
+                        </p>
+                    </div>
+                    <!-- Experience Item -->
+                    <div class="mb-10 ml-8">
+                        <div class="absolute -left-3.5 mt-1.5 h-6 w-6 rounded-full bg-cyan-500"></div>
+                        <h3 class="text-xl font-semibold text-cyan-400">DevOps Engineer</h3>
+                        <p class="text-md font-medium">Innovate LLC | 2018 - 2020</p>
+                        <p class="mt-2 text-gray-400">
+                           - Built and maintained Docker containers for application deployment.
+                           <br>- Worked on migrating legacy applications to a cloud-native architecture on AWS.
+                           <br>- Implemented monitoring and alerting solutions using Prometheus and Grafana.
+                        </p>
+                    </div>
+                    <!-- Experience Item -->
+                    <div class="ml-8">
+                         <div class="absolute -left-3.5 mt-1.5 h-6 w-6 rounded-full bg-cyan-500"></div>
+                        <h3 class="text-xl font-semibold text-cyan-400">Junior System Administrator</h3>
+                        <p class="text-md font-medium">Data Corp | 2016 - 2018</p>
+                        <p class="mt-2 text-gray-400">
+                           - Managed Linux servers and provided support for development teams.
+                           <br>- Assisted in automating server patching and updates using shell scripting.
+                           <br>- Gained foundational knowledge in networking and system security.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/1a202c/76e6d3?text=Project+One" alt="Project One" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Automated K8s Cluster Setup</h3>
+                            <p class="text-gray-400 mb-4">
+                                A set of Terraform and Ansible scripts to automate the deployment of a production-ready Kubernetes cluster on AWS.
+                            </p>
+                            <a href="#" class="text-cyan-400 hover:underline">View on GitHub &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Project Card -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden">
+                         <img src="https://placehold.co/600x400/1a202c/76e6d3?text=Project+Two" alt="Project Two" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Serverless CI/CD Pipeline</h3>
+                            <p class="text-gray-400 mb-4">
+                                A CI/CD pipeline for serverless applications using AWS Lambda, API Gateway, and CodePipeline.
+                            </p>
+                            <a href="#" class="text-cyan-400 hover:underline">View on GitHub &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Project Card -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden">
+                         <img src="https://placehold.co/600x400/1a202c/76e6d3?text=Project+Three" alt="Project Three" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Log Aggregation with ELK Stack</h3>
+                            <p class="text-gray-400 mb-4">
+                                Deployed and configured an ELK (Elasticsearch, Logstash, Kibana) stack for centralized log management and analysis.
+                            </p>
+                            <a href="#" class="text-cyan-400 hover:underline">View on GitHub &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-lg max-w-2xl mx-auto mb-8">
+                    I'm currently open to new opportunities. If you have a project in mind or just want to say hi, feel free to reach out.
+                </p>
+                <a href="mailto:johndoe@email.com" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-colors mb-10">
+                    johndoe@email.com
+                </a>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-3xl hover:text-cyan-400 transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-3xl hover:text-cyan-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-3xl hover:text-cyan-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 John Doe. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
+
